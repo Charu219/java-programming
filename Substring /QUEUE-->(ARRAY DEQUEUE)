@@ -1,0 +1,105 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        // create ArrayDeque
+        ArrayDeque<Integer> dq = new ArrayDeque<>();
+
+        // add()
+        dq.add(10);
+        dq.add(20);
+        dq.add(30);
+        System.out.println("After add(): " + dq);
+
+        // addFirst()
+        dq.addFirst(5);
+        System.out.println("After addFirst(): " + dq);
+
+        // addLast()
+        dq.addLast(40);
+        System.out.println("After addLast(): " + dq);
+
+        // offer()
+        dq.offer(50);
+        System.out.println("After offer(): " + dq);
+
+        // offerFirst()
+        dq.offerFirst(1);
+        System.out.println("After offerFirst(): " + dq);
+
+        // offerLast()
+        dq.offerLast(60);
+        System.out.println("After offerLast(): " + dq);
+
+        // peek()
+        System.out.println("peek(): " + dq.peek());
+
+        // peekFirst()
+        System.out.println("peekFirst(): " + dq.peekFirst());
+
+        // peekLast()
+        System.out.println("peekLast(): " + dq.peekLast());
+
+        // poll()
+        System.out.println("poll(): " + dq.poll());
+        System.out.println("After poll(): " + dq);
+
+        // pollFirst()
+        System.out.println("pollFirst(): " + dq.pollFirst());
+        System.out.println("After pollFirst(): " + dq);
+
+        // pollLast()
+        System.out.println("pollLast(): " + dq.pollLast());
+        System.out.println("After pollLast(): " + dq);
+
+        // remove()
+        dq.remove(20);
+        System.out.println("After remove(20): " + dq);
+
+        // size()
+        System.out.println("Size: " + dq.size());
+
+        // contains()
+        System.out.println("Contains 30? " + dq.contains(30));
+
+        // isEmpty()
+        System.out.println("Is deque empty? " + dq.isEmpty());
+
+        // iterator()
+        System.out.print("Using iterator(): ");
+        Iterator<Integer> it = dq.iterator();
+        while (it.hasNext()) {
+            System.out.print(it.next() + " ");
+        }
+        System.out.println();
+
+        // clear()
+        dq.clear();
+        System.out.println("After clear(): " + dq);
+    }
+}
+
+//OUTPUT:
+
+After add(): [10, 20, 30]
+After addFirst(): [5, 10, 20, 30]
+After addLast(): [5, 10, 20, 30, 40]
+After offer(): [5, 10, 20, 30, 40, 50]
+After offerFirst(): [1, 5, 10, 20, 30, 40, 50]
+After offerLast(): [1, 5, 10, 20, 30, 40, 50, 60]
+peek(): 1
+peekFirst(): 1
+peekLast(): 60
+poll(): 1
+After poll(): [5, 10, 20, 30, 40, 50, 60]
+pollFirst(): 5
+After pollFirst(): [10, 20, 30, 40, 50, 60]
+pollLast(): 60
+After pollLast(): [10, 20, 30, 40, 50]
+After remove(20): [10, 30, 40, 50]
+Size: 4
+Contains 30? true
+Is deque empty? false
+Using iterator(): 10 30 40 50
+After clear(): []
