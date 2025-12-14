@@ -1,0 +1,87 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        // create PriorityQueue (min-heap by default)
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+
+        // add()
+        pq.add(30);
+        pq.add(10);
+        pq.add(20);
+        System.out.println("After add(): " + pq);
+
+        // offer()
+        pq.offer(5);
+        System.out.println("After offer(): " + pq);
+
+        // peek()
+        System.out.println("Peek (smallest element): " + pq.peek());
+
+        // poll()
+        System.out.println("Polled element: " + pq.poll());
+        System.out.println("After poll(): " + pq);
+
+        // remove(Object)
+        pq.remove(20);
+        System.out.println("After remove(20): " + pq);
+
+        // size()
+        System.out.println("Size: " + pq.size());
+
+        // contains()
+        System.out.println("Contains 30? " + pq.contains(30));
+
+        // isEmpty()
+        System.out.println("Is queue empty? " + pq.isEmpty());
+
+        // iterator()
+        System.out.print("Using iterator(): ");
+        Iterator<Integer> it = pq.iterator();
+        while (it.hasNext()) {
+            System.out.print(it.next() + " ");
+        }
+        System.out.println();
+
+        // toArray()
+        Object[] arr = pq.toArray();
+        System.out.print("Queue to array: ");
+        for (Object o : arr) {
+            System.out.print(o + " ");
+        }
+        System.out.println();
+
+        // addAll()
+        PriorityQueue<Integer> pq2 = new PriorityQueue<>();
+        pq2.add(1);
+        pq2.add(50);
+        pq.addAll(pq2);
+        System.out.println("After addAll(): " + pq);
+
+        // removeIf()
+        pq.removeIf(n -> n > 20);
+        System.out.println("After removeIf(>20): " + pq);
+
+        // clear()
+        pq.clear();
+        System.out.println("After clear(): " + pq);
+    }
+}
+
+
+//OUTPUT:
+After add(): [10, 30, 20]
+After offer(): [5, 10, 20, 30]
+Peek (smallest element): 5
+Polled element: 5
+After poll(): [10, 30, 20]
+After remove(20): [10, 30]
+Size: 2
+Contains 30? true
+Is queue empty? false
+Using iterator(): 10 30
+Queue to array: 10 30
+After addAll(): [1, 10, 30, 50]
+After removeIf(>20): [1, 10]
+After clear(): []
