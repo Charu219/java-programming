@@ -1,0 +1,15 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args)throws Exception{
+        Scanner in=new Scanner(System.in);
+       String ch;
+BufferedReader fos=new BufferedReader(new FileReader("output.txt"));
+while((ch=fos.readLine())!=null){
+    System.out.println(ch);
+    
+}
+fos.close();
+    }
+}
