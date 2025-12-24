@@ -1,0 +1,23 @@
+import java.io.*;
+class employee implements Serializable{
+    int id;
+    String name;
+    double sal;
+    
+employee(int id, String name,double sal){
+    this.id=id;
+    this.name=name;
+    this.sal=sal;
+}
+}
+public class Main{
+    public static void main(String[] args)throws Exception{
+    employee e=new employee(101,"charu",4600.00);
+     
+  ObjectOutputStream ois =new ObjectOutputStream(new FileOutputStream("output.dat"));
+        ois.writeObject(e);
+        ois.close();
+        System.out.println("sucess");
+        
+    }
+}
