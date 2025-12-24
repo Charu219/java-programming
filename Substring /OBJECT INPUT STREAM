@@ -1,0 +1,26 @@
+import java.io.*;
+class employee implements Serializable{
+    int id;
+    String name;
+    double sal;
+    
+employee(int id, String name,double sal){
+    this.id=id;
+    this.name=name;
+    this.sal=sal;
+}
+}
+public class Main{
+    public static void main(String[] args)throws Exception{
+     
+  ObjectInputStream ois =
+                new ObjectInputStream(new FileInputStream("output.dat"));
+
+        employee e = (employee) ois.readObject();
+        ois.close();
+
+        System.out.println("id:"+e.id);
+        System.out.println("name:"+e.name);
+        System.out.println("sal"+e.sal);
+    }
+}
