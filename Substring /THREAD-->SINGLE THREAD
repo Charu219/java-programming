@@ -13,3 +13,20 @@ public class Main{
         System.out.println("task completed");
     }
 }
+------------------------------------------------------------------------------------------------------------------
+public class Main{
+    public static void main(String[] args){
+        try{
+            int add=0;
+            for(int i=1;i<=10;i++){
+                add=add+i;
+                Thread.sleep(500);
+            }
+           System.out.println(add); 
+        }
+        catch(InterruptedException e){
+            System.out.println(e);
+        }
+        System.out.println("task completed");
+    }
+}
