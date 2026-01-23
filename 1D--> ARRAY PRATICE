@@ -1,0 +1,220 @@
+FREQ OF THE NUMBER:
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner in=new Scanner(System.in);
+        int n=in.nextInt();
+        int arr[]=new int[n];
+    for(int i=0;i<n;i++){
+        arr[i]=in.nextInt();
+    }
+    
+    boolean visited[]= new boolean[n];
+    for(int i=0;i<n;i++){
+       int count=0;
+        if(visited[i]) continue;
+        for(int j=0;j<n;j++){
+            if(arr[i]==arr[j]){
+                count++;
+                 visited[j]=true;
+            }
+           
+        }
+        
+        
+        System.out.println(arr[i]+"occurs"+count+"times");
+    }
+    }
+}
+
+INPUT=[2,3,4,2,3]
+OUTPUT= 2 OCCURS 2 TIMES
+        3 OCCUR 2 TIMES
+        4 OCCUR 1 TIMES
+
+-------------------------------------------------------------------------
+MAX NUM IN ARRAY
+
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner in=new Scanner(System.in);
+        int n=in.nextInt();
+        int arr[]=new int[n];
+    for(int i=0;i<n;i++){
+        arr[i]=in.nextInt();
+    }
+    
+    int val=0;
+    for(int i=0;i<n;i++){
+       if(arr[i]>val){
+           val=arr[i];
+       }
+        
+    }
+    System.out.println(val);
+    }
+}
+-----------------------------------------------
+MIN NUM IN ARRAY
+
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner in=new Scanner(System.in);
+        int n=in.nextInt();
+        int arr[]=new int[n];
+    for(int i=0;i<n;i++){
+        arr[i]=in.nextInt();
+    }
+    
+    int val=arr[0];
+    for(int i=0;i<n;i++){
+       if(arr[i]<val){
+           val=arr[i];
+       }
+        
+    }
+    System.out.println(val);
+    }
+}
+
+---------------------------------------------------
+REVERSE THE ARRAY
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        int n = in.nextInt();
+        int arr[] = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            arr[i] = in.nextInt();
+        }
+
+        int i = 0, j = n - 1;
+        while (i < j) {
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+
+            i++;
+            j--;
+        }
+
+        for (int k = 0; k < n; k++) {
+            System.out.println(arr[k]);
+        }
+    }
+}
+
+------------------------------------------------------------------
+REMOVE DUPLI
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        int n = in.nextInt();
+        int arr[] = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            arr[i] = in.nextInt();
+        }
+
+    boolean visited[]=new boolean[n];
+    for(int i=0;i<n;i++){
+        if(visited[i]) continue;
+        for(int j=i+1;j<n;j++){
+            if(arr[i]==arr[j]){
+               
+                visited[j] = true;
+            }
+        }
+    }
+    for(int k=0;k<n;k++){
+        if(!visited[k]){
+        System.out.print(arr[k]);
+        }
+    }
+    }
+}
+-----------------------------------------------
+LEFT ROTATE
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        int n = in.nextInt();
+        int arr[] = new int[n];
+        
+        for (int i = 0; i < n; i++) {
+            arr[i] = in.nextInt();
+        }
+         int num=in.nextInt();
+           num = num % n;
+     int temp=0;
+     for(int i=0;i<num;i++){
+         temp=arr[0];
+         for(int j=0;j<n-1;j++){
+         arr[j]=arr[j+1];
+         }
+             arr[n-1]=temp;
+     }
+ 
+     for(int i=0;i<n;i++){
+     System.out.print(arr[i]);
+     }
+    
+    
+    }
+}
+
+
+-------------------------------
+RIGHT ROTATE
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        int n = in.nextInt();
+        int arr[] = new int[n];
+        
+        for (int i = 0; i < n; i++) {
+            arr[i] = in.nextInt();
+        }
+         int num=in.nextInt();
+           num = num % n;
+     int temp=0;
+     for(int i=0;i<num;i++){
+         temp=arr[n-1];
+         for(int j=n-1;j>0;j--){
+         arr[j]=arr[j-1];
+         }
+             arr[0]=temp;
+     }
+ 
+     for(int i=0;i<n;i++){
+     System.out.print(arr[i]);
+     }
+    
+    
+    }
+}
+
+
+
+
+
+
+
